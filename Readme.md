@@ -68,3 +68,6 @@ To deploy this project in your own worker, you will need to first login through 
 
 ```
 
+## Contributing
+
+Contributions are always welcome!
