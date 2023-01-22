@@ -20,6 +20,7 @@ export interface Env {
 }
 
 import { getDate } from './date';
+import { getNews } from './news';
 
 import { Router } from 'itty-router'
 
@@ -39,6 +40,14 @@ router.get("/", () => {
 router.get('/date', ({ }) => {
 	return new Response(getDate());
 })
+
+router.get('/news', async ({ }) => {
+	return new Response(await getNews(), {
+		headers: {
+			'content-type': 'application/json;charset=UTF-8',
+		},
+	});
+})
 /*
 This shows a different HTTP method, a POST.
 Try send a POST request using curl or another tool.
@@ -50,7 +59,7 @@ router.post("/post", async request => {
 	let fields = {
 		"asn": request.cf.asn,
 		"colo": request.cf.colo,
-		"json": request.cf.json,
+		"json": request.cf.jsonl,
 	}
 
 	// If the POST data is JSON then attach it to our response.
