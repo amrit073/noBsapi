@@ -21,6 +21,7 @@ export interface Env {
 
 import { getDate } from './date';
 import { getNews } from './news';
+import { getNotice } from './tunotice';
 
 import { Router } from 'itty-router'
 
@@ -31,7 +32,7 @@ const router = Router()
 Our index route, a simple hello world.
 */
 router.get("/", () => {
-	return new Response("Hello, world! This is the root page of your Worker template.")
+	return new Response("<a href='/date'>Date</a><a href='/news'>News</a>")
 })
 
 
