@@ -32,7 +32,11 @@ const router = Router()
 Our index route, a simple hello world.
 */
 router.get("/", () => {
-	return new Response("<a href='/date'>Date</a><a href='/news'>News</a>")
+	return new Response("<a href='/date'>Date</a><a href='/news'>News</a>", {
+		headers: {
+			'content-type': 'text/html;charset=UTF-8',
+		},
+	})
 })
 
 
