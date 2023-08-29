@@ -373,8 +373,7 @@ function checkIfDateIsInRange(year: number, month: number, day: number) {
 
 
 export const getDate = () => {
-	const today = new Date();
+	const today = new Date(new Date().toLocaleString('en-US', { timeZone: "Asia/Kathmandu" }))
 	return convertEnglishDateToNepali(today.getFullYear(), today.getMonth() + 1, today.getDate())
 }
 
-console.log(getDate());
